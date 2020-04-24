@@ -4,7 +4,7 @@ import './application.scss';
 
 function App() {
   return(
-    <div className="test">
+    <div className="view-container">
       it's working
     </div>
   );
