@@ -6,7 +6,10 @@ class Car extends Component {
     return (
       <li className="car-smallad">
         <img src={carLogo} alt="Car Logo" className="car-logo"/>
-        <h1>{this.props.car.brand}</h1>
+        <div className="car-details">
+          <span>{this.props.car.brand} - {this.props.car.model}</span>
+          <div className="ownerLine"><strong>Owner:</strong> {this.props.car.owner}</div>
+        </div>
       </li>
     );
   }
