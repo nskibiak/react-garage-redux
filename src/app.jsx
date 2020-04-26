@@ -7,6 +7,7 @@ function App() {
   return(
     <div className="view-container">
       <Sidebar />
+      <div className="list-container"></div>
     </div>
   );
 }
