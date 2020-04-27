@@ -7,17 +7,13 @@ class ListContainer extends Component {
   render () {
     return (
       <div className="list-container">
-        <div className="car-details">
-          <ul>
-              {cars.map((car) => {
-                return(
-                  <Link to={`/cars/${car.id}`}>
-                    <Car key={car.id} car={car}/>
-                  </Link>
-                );
-              })}
-          </ul>
-        </div>
+        {cars.map((car) => {
+          return(
+            <Link to={`/cars/${car.id}`}>
+              <Car key={car.id} car={car}/>
+            </Link>
+          );
+        })}
       </div>
     );
   }
