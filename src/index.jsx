@@ -16,6 +16,7 @@ const root = document.getElementById('root')
 const history = createBrowserHistory();
 
 const reducers = combineReducers({
+  cars: carsReducer,
   form: formReducer
 });
 
