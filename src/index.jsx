@@ -8,6 +8,8 @@ import reduxPromise from 'redux-promise';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
+import carsReducer from './reducers/cars_reducer';
+
 import { reducer as formReducer } from 'redux-form';
 
 
