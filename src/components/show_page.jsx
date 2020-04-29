@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
+import carLogo from '../assets/images/logo_square.svg';
 
 class ShowPage extends Component {
 
   render() {
     return (
-      "this is on"
+      <div className="car-container">
+        <div className="car-card">
+          <img src={carLogo} alt="Car Logo" className="car-picture"/>
+          <div className="car-details">
+            <div className="plate">
+            </div>
+            <button className="delete">Delete</button>
+          </div>
+        </div>
+      </div>
     );
   }
 }
