@@ -6,6 +6,10 @@ import { FiTrash2 } from 'react-icons/fi';
 import SidebarOther from '../components/sidebar_other';
 
 class ShowPage extends Component {
+  deleteCar = () => {
+    console.log('delete button working!');
+  }
+
   render() {
     return(
       <div className="view-container">
@@ -19,7 +23,7 @@ class ShowPage extends Component {
               <div className="plate">
                 {this.props.car.plate}
               </div>
-              <button className="delete"><FiTrash2 /> Delete</button>
+              <button className="delete" onClick={ () => this.deleteCar() }><FiTrash2 /> Delete</button>
             </div>
           </div>
         </div>
