@@ -9,11 +9,11 @@ function App() {
   return(
     <div className="view-container">
       <Sidebar />
-      <CarPage />
+      <ListContainer />
     </div>
   );
 }
 
 export default App;
 
-      // <ListContainer />
+      // <CarPage />

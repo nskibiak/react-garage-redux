@@ -13,7 +13,7 @@ class Sidebar extends Component {
         <img src={Logo} alt="Logo" className="logo"/>
         <h1>Garage Skibiak</h1>
         <p>Our garage is the best. Reasonable prices, always on time, we are the best (and fictional).</p>
-        <Link to="/">Add a car</Link>
+        <Link to="/cars/new">Add a car</Link>
       </div>
     );
   }

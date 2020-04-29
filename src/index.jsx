@@ -12,6 +12,9 @@ import carsReducer from './reducers/cars_reducer';
 
 import { reducer as formReducer } from 'redux-form';
 
+import Sidebar from './components/sidebar';
+import ListContainer from './containers/list_container';
+import CarPage from './containers/car_page';
 
 const root = document.getElementById('root')
 
@@ -29,7 +32,13 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={createStore(reducers, {}, middlewares)}>
       <Router history={history}>
-        <App />
+        <Switch>
+          <div className="view-container">
+            <Sidebar />
+            <Route path="/" exact component={ListContainer} />
+            <Route path="/cars/new" exact component={CarPage} />
+          </div>
+        </Switch>
       </Router>
     </Provider>
   </React.StrictMode>,
