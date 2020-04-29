@@ -15,10 +15,9 @@ import carsReducer from './reducers/cars_reducer';
 
 import { reducer as formReducer } from 'redux-form';
 
-import Sidebar from './components/sidebar';
-import ListContainer from './containers/list_container';
-import CarPage from './containers/car_page';
-import ShowPage from './components/show_page';
+import IndexPage from './containers/index_page';
+import NewPage from './containers/new_page';
+import ShowPage from './containers/show_page';
 
 const root = document.getElementById('root')
 
@@ -37,12 +36,9 @@ ReactDOM.render(
     <Provider store={createStore(reducers, {}, middlewares)}>
       <Router history={history}>
         <Switch>
-          <div className="view-container">
-            <Sidebar />
-            <Route path="/" exact component={ListContainer} />
-            <Route path="/new" exact component={CarPage} />
-            <Route path="/cars/:id" exact component={ShowPage} />
-          </div>
+          <Route path="/" exact component={IndexPage} />
+          <Route path="/new" exact component={NewPage} />
+          <Route path="/cars/:id" exact component={ShowPage} />
         </Switch>
       </Router>
     </Provider>

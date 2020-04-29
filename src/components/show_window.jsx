@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import carLogo from '../assets/images/logo_square.svg';
 import { FiTrash2 } from 'react-icons/fi';
 
-class ShowPage extends Component {
+class ShowWindow extends Component {
 
   componentDidMount() {
     console.log(this.props.car);
@@ -43,6 +43,6 @@ function mapStateToProps(state, ownProps) {
 //   return bindActionCreators({ viewCar }, dispatch);
 // }
 
-export default connect(mapStateToProps, null)(ShowPage);
+export default connect(mapStateToProps, null)(ShowWindow);
 
 // export default connect(mapStateToProps, mapDispatchToProps)(ShowPage);
