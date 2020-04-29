@@ -15,6 +15,7 @@ import { reducer as formReducer } from 'redux-form';
 import Sidebar from './components/sidebar';
 import ListContainer from './containers/list_container';
 import CarPage from './containers/car_page';
+import ShowPage from './components/show_page';
 
 const root = document.getElementById('root')
 
@@ -37,6 +38,7 @@ ReactDOM.render(
             <Sidebar />
             <Route path="/" exact component={ListContainer} />
             <Route path="/cars/new" exact component={CarPage} />
+            <Route path="/cars/:id" exact component={ShowPage} />
           </div>
         </Switch>
       </Router>
@@ -44,20 +46,3 @@ ReactDOM.render(
   </React.StrictMode>,
   root
 );
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Provider store={createStore(reducers, {}, middlewares)}>
-//       <Router history={history}>
-//         <div className="thin-container">
-//           <Switch>
-//             <Route path="/" exact component={PostsIndex} />
-//             <Route path="/posts/new" exact component={PostsNew} />
-//             <Route path="/posts/:id" component={PostsShow} />
-//           </Switch>
-//         </div>
-//       </Router>
-//     </Provider>
-//   </React.StrictMode>,
-//   document.querySelector('.container')
-// );

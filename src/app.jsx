@@ -8,8 +8,6 @@ import CarPage from './containers/car_page';
 function App() {
   return(
     <div className="view-container">
-      <Sidebar />
-      <ListContainer />
     </div>
   );
 }
