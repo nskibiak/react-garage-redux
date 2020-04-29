@@ -26,21 +26,21 @@ let CarForm = props => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className="form-group">
         <label htmlFor="brand">Brand</label>
-        <Field name="brand" component="input" type="text" />
+        <Field className="form-control" name="brand" component="input" type="text" />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="model">Model</label>
-        <Field name="model" component="input" type="text" />
+        <Field className="form-control" name="model" component="input" type="text" />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="owner">Owner</label>
-        <Field name="owner" component="input" type="text" />
+        <Field className="form-control" name="owner" component="input" type="text" />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="plate">Plate</label>
-        <Field name="plate" component="input" type="text" />
+        <Field className="form-control" name="plate" component="input" type="text" />
       </div>
       <button type="submit">Add Car</button>
     </form>
