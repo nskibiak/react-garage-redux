@@ -236,6 +236,9 @@ label {
 }
 
 button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   padding: 10px 17px;
   margin-left: -2px;
   border-radius: 0 2px 2px 0;
