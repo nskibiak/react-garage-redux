@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './assets/stylesheets/application.scss';
 import Sidebar from './components/sidebar';
 import ListContainer from './containers/list_container';
-import CarPage from './containers/car_form';
+import CarPage from './containers/car_page';
 
 function App() {
   return(

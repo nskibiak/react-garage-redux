@@ -1,7 +1,7 @@
 const ROOT_URL = 'https://wagon-garage-api.herokuapp.com/skibiak/cars';
 
 export const FETCH_CARS = 'FETCH_CARS';
-// export const POST_CAR = 'POST_CAR';
+export const POST_CAR = 'POST_CAR';
 // export const POST_CREATED = 'POST_CREATED';
 
 export function fetchCars() {
@@ -11,6 +11,19 @@ export function fetchCars() {
   return {
     type: FETCH_CARS,
     payload: promise
+  };
+}
+
+export function postCar(body) {
+  const request = fetch(`${ROOT_URL}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body)
+  })
+
+  return {
+    type: POST_CAR,
+    payload: request
   };
 }
 
