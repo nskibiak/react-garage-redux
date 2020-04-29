@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { postCar } from '../actions';
@@ -15,13 +15,13 @@ class NewPage extends Component {
 
   render() {
     return(
-      <div className="view-container">
+      <Fragment>
         <SidebarOther />
         <div className="form-container">
           <img className="overlay" src={formImage} alt="" />
             <CarForm onSubmit={this.submit} />
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

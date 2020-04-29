@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import SidebarIndex from '../components/sidebar_index';
 import ListContainer from '../containers/list_container';
@@ -6,10 +6,10 @@ import ListContainer from '../containers/list_container';
 class IndexPage extends Component {
   render() {
     return(
-      <div className="view-container">
+      <Fragment>
         <SidebarIndex />
         <ListContainer />
-      </div>
+      </Fragment>
     );
   }
 }

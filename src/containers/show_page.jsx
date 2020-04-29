@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import carLogo from '../assets/images/logo_square.svg';
@@ -12,7 +12,7 @@ class ShowPage extends Component {
 
   render() {
     return(
-      <div className="view-container">
+      <Fragment>
         <SidebarOther />
         <div className="car-container">
           <div className="car-card">
@@ -27,7 +27,7 @@ class ShowPage extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

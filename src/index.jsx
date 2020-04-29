@@ -36,9 +36,11 @@ ReactDOM.render(
     <Provider store={createStore(reducers, {}, middlewares)}>
       <Router history={history}>
         <Switch>
-          <Route path="/" exact component={IndexPage} />
-          <Route path="/new" exact component={NewPage} />
-          <Route path="/cars/:id" exact component={ShowPage} />
+          <div className="view-container">
+            <Route path="/" exact component={IndexPage} />
+            <Route path="/new" exact component={NewPage} />
+            <Route path="/cars/:id" exact component={ShowPage} />
+          </div>
         </Switch>
       </Router>
     </Provider>
