@@ -1,58 +1,38 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import { reduxForm, Field } from 'redux-form';
-import { createPost } from '../actions';
+// import { connect } from 'react-redux';
+// import { createPost } from '../actions';
 
-class NewCar extends Component {
+let CarForm = props => {
+  const { handleSubmit } = props
 
-  // renderField(field) {
-  //   return (
-  //     <div className="form-group">
-  //       <label>{field.label}</label>
-  //       <input
-  //         className="form-control"
-  //         type={field.type}
-  //         {...field.input}
-  //       />
-  //     </div>
-  //   );
-  // }
-
-  // onSubmit = (values) => {
-  //   this.props.createPost(values, (post) => {
-  //     this.props.history.push('/'); // Navigate after submit
-  //       return post;
-  //   });
-  // }
-
-  render() {
-    return (
-      "hello"
-  //     <div>
-  //       <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
-  //         <Field
-  //           label="Title"
-  //           name="title"
-  //           type="text"
-  //           component={this.renderField}
-  //         />
-  //         <label htmlFor="content">Content</label>
-  //         <Field
-  //           className="form-control"
-  //           label="Content"
-  //           name="content"
-  //           component="textarea"
-  //           rows="8"
-  //         />
-  //         <button className="btn btn-primary" type="submit"
-  //           disabled={this.props.pristine || this.props.submitting}>
-  //           Create Post
-  //         </button>
-  //       </form>
-  //     </div>
-    );
-  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="brand">Brand</label>
+        <Field name="brand" component="input" type="text" />
+      </div>
+      <div>
+        <label htmlFor="model">Model</label>
+        <Field name="model" component="input" type="text" />
+      </div>
+      <div>
+        <label htmlFor="owner">Owner</label>
+        <Field name="owner" component="input" type="text" />
+      </div>
+      <div>
+        <label htmlFor="plate">Plate</label>
+        <Field name="plate" component="input" type="text" />
+      </div>
+      <button type="submit">Add Car</button>
+    </form>
+  )
 }
 
-export default NewCar
+CarForm = reduxForm({
+  // a unique name for the form
+  form: 'car'
+})(CarForm)
+
+export default CarForm
 
