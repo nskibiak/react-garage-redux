@@ -10,7 +10,14 @@ class CarPage extends Component {
       console.log(values)
     }
     render() {
-      return <CarForm onSubmit={this.submit} />
+      return(
+        <Fragment>
+          <div className="form-container">
+            <img className="overlay" src={formImage} alt="" />
+              <CarForm onSubmit={this.submit} />
+          </div>
+        </Fragment>
+      );
     }
 }
 
@@ -18,27 +25,25 @@ let CarForm = props => {
   const { handleSubmit } = props
 
   return (
-      <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="brand">Brand</label>
-            <Field name="brand" component="input" type="text" />
-          </div>
-          <div>
-            <label htmlFor="model">Model</label>
-            <Field name="model" component="input" type="text" />
-          </div>
-          <div>
-            <label htmlFor="owner">Owner</label>
-            <Field name="owner" component="input" type="text" />
-          </div>
-          <div>
-            <label htmlFor="plate">Plate</label>
-            <Field name="plate" component="input" type="text" />
-          </div>
-          <button type="submit">Add Car</button>
-        </form>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="brand">Brand</label>
+        <Field name="brand" component="input" type="text" />
       </div>
+      <div>
+        <label htmlFor="model">Model</label>
+        <Field name="model" component="input" type="text" />
+      </div>
+      <div>
+        <label htmlFor="owner">Owner</label>
+        <Field name="owner" component="input" type="text" />
+      </div>
+      <div>
+        <label htmlFor="plate">Plate</label>
+        <Field name="plate" component="input" type="text" />
+      </div>
+      <button type="submit">Add Car</button>
+    </form>
   )
 }
 
