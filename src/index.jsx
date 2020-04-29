@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app';
+
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+
+import 'bootstrap/dist/css/bootstrap.css';
+import './assets/stylesheets/application.scss';
 
 import carsReducer from './reducers/cars_reducer';
 
