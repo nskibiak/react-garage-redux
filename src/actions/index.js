@@ -9,7 +9,6 @@ export const DELETE_CAR = 'DELETE_CAR';
 export function fetchCars() {
   const promise = fetch(`${ROOT_URL}`)
     .then(response => response.json());
-
   return {
     type: FETCH_CARS,
     payload: promise
@@ -22,7 +21,6 @@ export function postCar(body) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
   })
-
   return {
     type: POST_CAR,
     payload: request

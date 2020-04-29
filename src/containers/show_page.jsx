@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { deleteCar } from '../actions';
+import { deleteCar, fetchCars } from '../actions';
 
 import carLogo from '../assets/images/logo_square.svg';
 import { FiTrash2 } from 'react-icons/fi';
@@ -11,6 +11,7 @@ class ShowPage extends Component {
   deleteCar = () => {
     console.log('delete button working!');
     this.props.deleteCar(this.props.car.id);
+    this.props.fetchCars();
     this.props.history.push('/');
   }
 
@@ -37,7 +38,7 @@ class ShowPage extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ deleteCar }, dispatch);
+  return bindActionCreators({ deleteCar, fetchCars }, dispatch);
 }
 
 function mapStateToProps(state, ownProps) {
