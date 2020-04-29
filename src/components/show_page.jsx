@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import carLogo from '../assets/images/logo_square.svg';
+import { FiTrash2 } from 'react-icons/fi';
 
 class ShowPage extends Component {
 
@@ -11,7 +12,7 @@ class ShowPage extends Component {
           <div className="car-details">
             <div className="plate">
             </div>
-            <button className="delete">Delete</button>
+            <button className="delete"><FiTrash2 /> Delete</button>
           </div>
         </div>
       </div>
