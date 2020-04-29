@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { deleteCar } from '../actions';
 
 import carLogo from '../assets/images/logo_square.svg';
 import { FiTrash2 } from 'react-icons/fi';
@@ -8,6 +10,8 @@ import SidebarOther from '../components/sidebar_other';
 class ShowPage extends Component {
   deleteCar = () => {
     console.log('delete button working!');
+    this.props.deleteCar(this.props.car.id);
+    this.props.history.push('/');
   }
 
   render() {
@@ -32,10 +36,14 @@ class ShowPage extends Component {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ deleteCar }, dispatch);
+}
+
 function mapStateToProps(state, ownProps) {
   const idFromUrl = parseInt(ownProps.match.params.id, 10); // From URL
   const car = state.cars.find(car => car.id === idFromUrl);
   return { car };
 }
 
-export default connect(mapStateToProps, null)(ShowPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ShowPage);

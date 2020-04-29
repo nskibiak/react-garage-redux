@@ -4,6 +4,7 @@ const VIEW_URL = 'https://wagon-garage-api.herokuapp.com/cars';
 export const FETCH_CARS = 'FETCH_CARS';
 export const POST_CAR = 'POST_CAR';
 export const VIEW_CAR = 'VIEW_CAR';
+export const DELETE_CAR = 'DELETE_CAR';
 
 export function fetchCars() {
   const promise = fetch(`${ROOT_URL}`)
@@ -34,6 +35,16 @@ export function viewCar(id) {
   return {
     type: VIEW_CAR,
     payload: promise
+  }
+}
+
+export function deleteCar(id) {
+  const request = fetch(`${VIEW_URL}/${id}`, {
+    method: 'DELETE',
+  }).then(response => response.json());
+  return {
+    type: DELETE_CAR,
+    payload: request
   }
 }
 
