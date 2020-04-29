@@ -10,6 +10,7 @@ class CarPage extends Component {
       // print the form values to the console
       this.props.postCar(values);
       console.log(values);
+      this.props.history.push('/');
     }
 
   render() {

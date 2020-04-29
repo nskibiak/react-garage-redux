@@ -37,7 +37,7 @@ ReactDOM.render(
           <div className="view-container">
             <Sidebar />
             <Route path="/" exact component={ListContainer} />
-            <Route path="/cars/new" exact component={CarPage} />
+            <Route path="/new" exact component={CarPage} />
             <Route path="/cars/:id" exact component={ShowPage} />
           </div>
         </Switch>
