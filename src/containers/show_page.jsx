@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { deleteCar, fetchCars } from '../actions';
+import { deleteCar, fetchCars, viewCar } from '../actions';
 
 import carLogo from '../assets/images/logo_square.svg';
 import { FiTrash2 } from 'react-icons/fi';
@@ -13,6 +13,10 @@ class ShowPage extends Component {
     this.props.deleteCar(this.props.car.id);
     this.props.fetchCars();
     this.props.history.push('/');
+  }
+
+  componentDidMount = () => {
+    this.props.viewCar(this.props.idFromUrl);
   }
 
   render() {
@@ -38,13 +42,16 @@ class ShowPage extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ deleteCar, fetchCars }, dispatch);
+  return bindActionCreators({ deleteCar, fetchCars, viewCar }, dispatch);
 }
 
 function mapStateToProps(state, ownProps) {
   const idFromUrl = parseInt(ownProps.match.params.id, 10); // From URL
-  const car = state.cars.find(car => car.id === idFromUrl);
-  return { car };
+  // const car = state.cars.find(car => car.id === idFromUrl);
+  return {
+    car: state.car,
+    idFromUrl
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowPage);

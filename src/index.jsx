@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './assets/stylesheets/application.scss';
 
 import carsReducer from './reducers/cars_reducer';
+import carReducer from './reducers/car_reducer';
 
 import { reducer as formReducer } from 'redux-form';
 
@@ -25,6 +26,7 @@ const history = createBrowserHistory();
 
 const reducers = combineReducers({
   cars: carsReducer,
+  car: carReducer,
   form: formReducer
 });
 
